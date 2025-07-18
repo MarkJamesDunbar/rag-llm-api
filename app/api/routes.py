@@ -1,4 +1,3 @@
-# app/api/routes.py
 from fastapi import APIRouter, UploadFile, File, Depends
 from app.services import document_loader, vector_store, openai_client, session_manager
 from app.models import schemas

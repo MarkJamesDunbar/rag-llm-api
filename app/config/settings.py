@@ -1,4 +1,3 @@
-# filepath: /Users/markdunbar/Documents/Repositories/rag-llm-api/app/config/settings.py
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
