@@ -1,0 +1,20 @@
+# filepath: /Users/markdunbar/Documents/Repositories/rag-llm-api/deployments/docker-compose.yml
+version: "3.8"
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deployments/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CHROMA_PERSIST_DIR=/app/chroma_data
+    volumes:
+      - chroma-data:/app/chroma_data
+  chromadb:
+    image: chromadb/chromadb:latest
+    volumes:
+      - chroma-data:/app/chroma_data
+volumes:
+  chroma-data:

@@ -1,0 +1,8 @@
+volumeMounts:
+  - name: chroma-data
+    mountPath: /app/chroma_data
+...
+volumes:
+  - name: chroma-data
+    persistentVolumeClaim:
+      claimName: chromadb-pvc
